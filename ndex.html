@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager App v1.0.0 - Documentation | Hon. Mercy Rono</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Crimson Pro', serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+        
+        .heading-font {
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 0.05em;
+        }
+        
+        /* Animated gradient background */
+        .gradient-bg {
+            background: linear-gradient(120deg, #10b981, #3b82f6, #8b5cf6, #ec4899);
+            background-size: 300% 300%;
+            animation: gradientShift 15s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* Fade in animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in-delay-1 { animation-delay: 0.2s; }
+        .fade-in-delay-2 { animation-delay: 0.4s; }
+        .fade-in-delay-3 { animation-delay: 0.6s; }
+        .fade-in-delay-4 { animation-delay: 0.8s; }
+        
+        /* Card hover effects */
+        .hover-lift {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(16, 185, 129, 0.3);
+        }
+        
+        /* Accent borders */
+        .accent-border {
+            position: relative;
+        }
+        
+        .accent-border::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #10b981, #3b82f6);
+        }
+        
+        /* Navigation active state */
+        .nav-active {
+            background: rgba(16, 185, 129, 0.2);
+            border-left: 4px solid #10b981;
+        }
+        
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #1e293b;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #10b981;
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #059669;
+        }
+        
+        /* Badge pulse */
+        .pulse-badge {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+        
+        /* Code block styling */
+        .code-block {
+            background: #0f172a;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            padding: 1rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+        }
+        
+        /* Step number circles */
+        .step-circle {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #10b981, #059669);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.25rem;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+        }
+        
+        /* Mobile menu */
+        .mobile-menu {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Header -->
+    <header class="gradient-bg py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-10 left-10 w-72 h-72 bg-white rounded-full filter blur-3xl"></div>
+            <div class="absolute bottom-10 right-10 w-96 h-96 bg-white rounded-full filter blur-3xl"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center fade-in">
+                <span class="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-semibold mb-4 pulse-badge">
+                    Version 1.0.0
+                </span>
+                <h1 class="heading-font text-6xl sm:text-7xl md:text-8xl font-bold text-white mb-4 tracking-wider">
+                    MANAGER APP
+                </h1>
+                <p class="text-2xl sm:text-3xl text-white/90 mb-6 font-light">
+                    Bomet County Woman Rep Campaign Platform
+                </p>
+                <div class="flex items-center justify-center gap-2 text-white/80 text-lg">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                    </svg>
+                    <span>Hon. Mercy Rono - Woman Representative Aspirant</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            
+            <!-- Sidebar Navigation -->
+            <aside class="lg:col-span-1">
+                <div class="sticky top-6 bg-slate-800/50 backdrop-blur-md rounded-2xl p-6 border border-slate-700 accent-border fade-in-delay-1">
+                    <h3 class="heading-font text-2xl text-emerald-400 mb-6 tracking-wide">DOCUMENTATION</h3>
+                    <nav id="nav-menu" class="space-y-2">
+                        <a href="#overview" class="block px-4 py-3 rounded-lg hover:bg-slate-700/50 transition-all duration-200 nav-link">
+                            <span class="text-sm font-semibold">Overview</span>
+                        </a>
+                        <a href="#getting-started" class="block px-4 py-3 rounded-lg hover:bg-slate-700/50 transition-all duration-200 nav-link">
+                            <span class="text-sm font-semibold">Getting Started</span>
+                        </a>
+                        <a href="#user-roles" class="block px-4 py-3 rounded-lg hover:bg-slate-700/50 transition-all duration-200 nav-link">
+                            <span class="text-sm font-semibold">User Roles</span>
+                        </a>
+                        <a href="#features" class="block px-4 py-3 rounded-lg hover:bg-slate-700/50 transition-all duration-200 nav-link">
+                            <span class="text-sm font-semibold">Features</span>
+                        </a>
+                        <a href="#permissions" class="block px-4 py-3 rounded-lg hover:bg-slate-700/50 transition-all duration-200 nav-link">
+                            <span class="text-sm font-semibold">Permissions</span>
+                        </a>
+                        <a href="#support" class="block px-4 py-3 rounded-lg hover:bg-slate-700/50 transition-all duration-200 nav-link">
+                            <span class="text-sm font-semibold">Support</span>
+                        </a>
+                    </nav>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="lg:col-span-3 space-y-12">
+                
+                <!-- Overview Section -->
+                <section id="overview" class="fade-in-delay-2">
+                    <div class="bg-slate-800/50 backdrop-blur-md rounded-2xl p-8 border border-slate-700 accent-border hover-lift">
+                        <h2 class="heading-font text-4xl text-emerald-400 mb-6 tracking-wide">OVERVIEW</h2>
+                        <p class="text-lg text-slate-300 leading-relaxed mb-4">
+                            The Campaign Manager is a comprehensive digital platform designed to streamline and optimize campaign operations for Hon. Mercy Rono's Women Representative candidacy in Bomet County. This powerful tool enables coordinators, agents, and administrators to collaborate effectively, track progress, and manage campaign activities with precision.
+                        </p>
+                        <p class="text-lg text-slate-300 leading-relaxed">
+                            Built with modern technology and user-centric design, the platform ensures every team member has the tools they need to contribute to a successful campaign.
+                        </p>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
+                            <div class="bg-slate-900/50 rounded-xl p-6 border border-emerald-500/30">
+                                <div class="text-3xl font-bold text-emerald-400 mb-2">100%</div>
+                                <div class="text-sm text-slate-400">Bomet County Coverage</div>
+                            </div>
+                            <div class="bg-slate-900/50 rounded-xl p-6 border border-blue-500/30">
+                                <div class="text-3xl font-bold text-blue-400 mb-2">Real-time</div>
+                                <div class="text-sm text-slate-400">Data Synchronization</div>
+                            </div>
+                            <div class="bg-slate-900/50 rounded-xl p-6 border border-purple-500/30">
+                                <div class="text-3xl font-bold text-purple-400 mb-2">Secure</div>
+                                <div class="text-sm text-slate-400">Role-based Access</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Getting Started Section -->
+                <section id="getting-started" class="fade-in-delay-3">
+                    <div class="bg-slate-800/50 backdrop-blur-md rounded-2xl p-8 border border-slate-700 accent-border hover-lift">
+                        <h2 class="heading-font text-4xl text-emerald-400 mb-6 tracking-wide">GETTING STARTED</h2>
+                        
+                        <div class="space-y-6">
+                            <!-- Step 1 -->
+                            <div class="flex gap-6">
+                                <div class="flex-shrink-0">
+                                    <div class="step-circle">1</div>
+                                </div>
+                                <div class="flex-grow">
+                                    <h3 class="text-2xl font-semibold text-white mb-3">Receive Login Credentials</h3>
+                                    <p class="text-slate-300 mb-4">
+                                        The system administrator will provide you with temporary login credentials via secure communication channels. These credentials include:
+                                    </p>
+                                    <div class="code-block">
+                                        <div class="text-emerald-400">Username: [provided by admin]</div>
+                                        <div class="text-emerald-400">Temporary Password: [provided by admin]</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Step 2 -->
+                            <div class="flex gap-6">
+                                <div class="flex-shrink-0">
+                                    <div class="step-circle">2</div>
+                                </div>
+                                <div class="flex-grow">
+                                    <h3 class="text-2xl font-semibold text-white mb-3">First Login & Password Change</h3>
+                                    <p class="text-slate-300 mb-4">
+                                        Upon your first login, you will be prompted to change your temporary password. Choose a strong, unique password that includes:
+                                    </p>
+                                    <ul class="list-disc list-inside text-slate-300 space-y-2 ml-4">
+                                        <li>At least 8 characters</li>
+                                        <li>Mix of uppercase and lowercase letters</li>
+                                        <li>Numbers and special characters</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Step 3 -->
+                            <div class="flex gap-6">
+                                <div class="flex-shrink-0">
+                                    <div class="step-circle">3</div>
+                                </div>
+                                <div class="flex-grow">
+                                    <h3 class="text-2xl font-semibold text-white mb-3">Update Your Profile</h3>
+                                    <p class="text-slate-300 mb-4">
+                                        Navigate to the Profile tab and complete your profile by:
+                                    </p>
+                                    <ul class="list-disc list-inside text-slate-300 space-y-2 ml-4">
+                                        <li>Uploading a clear profile picture</li>
+                                        <li>Verifying your contact information</li>
+                                        <li>Adding your role details and location</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Step 4 -->
+                            <div class="flex gap-6">
+                                <div class="flex-shrink-0">
+                                    <div class="step-circle">4</div>
+                                </div>
+                                <div class="flex-grow">
+                                    <h3 class="text-2xl font-semibold text-white mb-3">Enable Required Permissions</h3>
+                                    <p class="text-slate-300 mb-4">
+                                        For full functionality, the app requires two essential permissions:
+                                    </p>
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                        <div class="bg-slate-900/50 rounded-lg p-4 border border-blue-500/30">
+                                            <div class="flex items-center gap-3 mb-2">
+                                                <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
+                                                </svg>
+                                                <h4 class="font-semibold text-white">Notifications</h4>
+                                            </div>
+                                            <p class="text-sm text-slate-400">Receive real-time updates on campaign activities and events</p>
+                                        </div>
+                                        <div class="bg-slate-900/50 rounded-lg p-4 border border-purple-500/30">
+                                            <div class="flex items-center gap-3 mb-2">
+                                                <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                                </svg>
+                                                <h4 class="font-semibold text-white">Location</h4>
+                                            </div>
+                                            <p class="text-sm text-slate-400">Track field activities and optimize territorial coverage</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- User Roles Section -->
+                <section id="user-roles" class="fade-in-delay-4">
+                    <div class="bg-slate-800/50 backdrop-blur-md rounded-2xl p-8 border border-slate-700 accent-border hover-lift">
+                        <h2 class="heading-font text-4xl text-emerald-400 mb-6 tracking-wide">USER ROLES</h2>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- Admin Role -->
+                            <div class="bg-gradient-to-br from-rose-900/30 to-rose-800/20 rounded-xl p-6 border border-rose-500/30">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <svg class="w-8 h-8 text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                                    </svg>
+                                    <h3 class="text-2xl font-bold text-white">Administrator</h3>
+                                </div>
+                                <p class="text-slate-300 mb-4">
+                                    Full system access with the ability to manage users, configure settings, and oversee all campaign operations.
+                                </p>
+                                <ul class="space-y-2 text-sm text-slate-400">
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-emerald-400">✓</span> Create and manage user accounts
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-emerald-400">✓</span> Access all data and reports
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-emerald-400">✓</span> Configure system settings
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Coordinator Role -->
+                            <div class="bg-gradient-to-br from-blue-900/30 to-blue-800/20 rounded-xl p-6 border border-blue-500/30">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <svg class="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                    </svg>
+                                    <h3 class="text-2xl font-bold text-white">Coordinator</h3>
+                                </div>
+                                <p class="text-slate-300 mb-4">
+                                    Manage regional teams, coordinate activities, and track progress across designated areas within Bomet County.
+                                </p>
+                                <ul class="space-y-2 text-sm text-slate-400">
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-emerald-400">✓</span> Manage team members
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-emerald-400">✓</span> Schedule and track events
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-emerald-400">✓</span> View regional reports
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Agent Role -->
+                            <div class="bg-gradient-to-br from-emerald-900/30 to-emerald-800/20 rounded-xl p-6 border border-emerald-500/30">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <svg class="w-8 h-8 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                                    </svg>
+                                    <h3 class="text-2xl font-bold text-white">Agent</h3>
+                                </div>
+                                <p class="text-slate-300 mb-4">
+                                    Ground-level campaign workers who collect data, engage with voters, and report field activities.
+                                </p>
+                                <ul class="space-y-2 text-sm text-slate-400">
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-emerald-400">✓</span> Input field data
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-emerald-400">✓</span> Track personal activities
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-emerald-400">✓</span> View assigned tasks
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Additional Roles -->
+                            <div class="bg-gradient-to-br from-purple-900/30 to-purple-800/20 rounded-xl p-6 border border-purple-500/30">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <svg class="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                                    </svg>
+                                    <h3 class="text-2xl font-bold text-white">Other Roles</h3>
+                                </div>
+                                <p class="text-slate-300 mb-4">
+                                    Additional specialized roles can be configured by administrators to support specific campaign functions.
+                                </p>
+                                <ul class="space-y-2 text-sm text-slate-400">
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-emerald-400">✓</span> Custom permissions
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-emerald-400">✓</span> Tailored access levels
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-emerald-400">✓</span> Flexible configurations
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Features Section -->
+                <section id="features">
+                    <div class="bg-slate-800/50 backdrop-blur-md rounded-2xl p-8 border border-slate-700 accent-border hover-lift">
+                        <h2 class="heading-font text-4xl text-emerald-400 mb-6 tracking-wide">KEY FEATURES</h2>
+                        
+                        <div class="space-y-6">
+                            <!-- Home Tab -->
+                            <div class="bg-slate-900/50 rounded-xl p-6 border border-slate-700">
+                                <div class="flex items-center gap-4 mb-4">
+                                    <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center">
+                                        <svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-2xl font-semibold text-white">Home Tab</h3>
+                                </div>
+                                <p class="text-slate-300 mb-4">
+                                    Your campaign dashboard displaying real-time metrics, recent activities, and important announcements. Get a comprehensive overview of campaign progress at a glance.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-emerald-500/20 text-emerald-300 rounded-full text-sm">Quick Stats</span>
+                                    <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">Activity Feed</span>
+                                    <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm">Notifications</span>
+                                </div>
+                            </div>
+
+                            <!-- Data Tab -->
+                            <div class="bg-slate-900/50 rounded-xl p-6 border border-slate-700">
+                                <div class="flex items-center gap-4 mb-4">
+                                    <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center">
+                                        <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-2xl font-semibold text-white">Data Tab</h3>
+                                </div>
+                                <p class="text-slate-300 mb-4">
+                                    Comprehensive data management tools for recording voter information, tracking outreach efforts, and analyzing campaign effectiveness across Bomet County.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-emerald-500/20 text-emerald-300 rounded-full text-sm">Voter Database</span>
+                                    <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">Data Entry</span>
+                                    <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm">Analytics</span>
+                                </div>
+                            </div>
+
+                            <!-- Team Tab -->
+                            <div class="bg-slate-900/50 rounded-xl p-6 border border-slate-700">
+                                <div class="flex items-center gap-4 mb-4">
+                                    <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center">
+                                        <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-2xl font-semibold text-white">Team Tab</h3>
+                                </div>
+                                <p class="text-slate-300 mb-4">
+                                    View and manage your campaign team structure. See who's working in your region, communicate with team members, and track individual contributions.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-emerald-500/20 text-emerald-300 rounded-full text-sm">Team Directory</span>
+                                    <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">Performance</span>
+                                    <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm">Communication</span>
+                                </div>
+                            </div>
+
+                            <!-- Events Tab -->
+                            <div class="bg-slate-900/50 rounded-xl p-6 border border-slate-700">
+                                <div class="flex items-center gap-4 mb-4">
+                                    <div class="w-12 h-12 bg-rose-500/20 rounded-lg flex items-center justify-center">
+                                        <svg class="w-6 h-6 text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-2xl font-semibold text-white">Events Tab</h3>
+                                </div>
+                                <p class="text-slate-300 mb-4">
+                                    Schedule, organize, and track campaign events including rallies, community meetings, door-to-door campaigns, and other outreach activities.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-emerald-500/20 text-emerald-300 rounded-full text-sm">Event Calendar</span>
+                                    <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">RSVP Tracking</span>
+                                    <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm">Attendance</span>
+                                </div>
+                            </div>
+
+                            <!-- Profile Tab -->
+                            <div class="bg-slate-900/50 rounded-xl p-6 border border-slate-700">
+                                <div class="flex items-center gap-4 mb-4">
+                                    <div class="w-12 h-12 bg-amber-500/20 rounded-lg flex items-center justify-center">
+                                        <svg class="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-2xl font-semibold text-white">Profile Tab</h3>
+                                </div>
+                                <p class="text-slate-300 mb-4">
+                                    Manage your personal account settings, update your profile information, change your password, and customize your app preferences.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-emerald-500/20 text-emerald-300 rounded-full text-sm">Profile Picture</span>
+                                    <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">Security</span>
+                                    <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm">Settings</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Permissions Section -->
+                <section id="permissions">
+                    <div class="bg-slate-800/50 backdrop-blur-md rounded-2xl p-8 border border-slate-700 accent-border hover-lift">
+                        <h2 class="heading-font text-4xl text-emerald-400 mb-6 tracking-wide">APP PERMISSIONS</h2>
+                        
+                        <div class="bg-amber-900/20 border border-amber-500/30 rounded-xl p-6 mb-6">
+                            <div class="flex items-start gap-3">
+                                <svg class="w-6 h-6 text-amber-400 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                                </svg>
+                                <div>
+                                    <h3 class="font-semibold text-amber-200 mb-2">Important Notice</h3>
+                                    <p class="text-amber-100/80">
+                                        For the app to function optimally and provide you with the best experience, you must grant the following permissions when prompted. These permissions are essential for core features.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-6">
+                            <!-- Notification Permission -->
+                            <div class="bg-slate-900/50 rounded-xl p-6 border border-blue-500/30">
+                                <div class="flex items-start gap-4">
+                                    <div class="w-16 h-16 bg-blue-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                                        <svg class="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex-grow">
+                                        <h3 class="text-2xl font-semibold text-white mb-3">Notifications</h3>
+                                        <p class="text-slate-300 mb-4">
+                                            Stay informed with real-time alerts about campaign activities, team updates, and important announcements.
+                                        </p>
+                                        <div class="space-y-2 text-sm text-slate-400">
+                                            <div class="flex items-center gap-2">
+                                                <span class="text-emerald-400">✓</span>
+                                                <span>Event reminders and updates</span>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <span class="text-emerald-400">✓</span>
+                                                <span>New assignments and tasks</span>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <span class="text-emerald-400">✓</span>
+                                                <span>Campaign announcements</span>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <span class="text-emerald-400">✓</span>
+                                                <span>Team messages and alerts</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Location Permission -->
+                            <div class="bg-slate-900/50 rounded-xl p-6 border border-purple-500/30">
+                                <div class="flex items-start gap-4">
+                                    <div class="w-16 h-16 bg-purple-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                                        <svg class="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex-grow">
+                                        <h3 class="text-2xl font-semibold text-white mb-3">Location Access</h3>
+                                        <p class="text-slate-300 mb-4">
+                                            Enable location services to accurately track field activities and ensure comprehensive coverage across Bomet County.
+                                        </p>
+                                        <div class="space-y-2 text-sm text-slate-400">
+                                            <div class="flex items-center gap-2">
+                                                <span class="text-emerald-400">✓</span>
+                                                <span>Log field visit locations</span>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <span class="text-emerald-400">✓</span>
+                                                <span>Verify event attendance</span>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <span class="text-emerald-400">✓</span>
+                                                <span>Optimize territorial coverage</span>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <span class="text-emerald-400">✓</span>
+                                                <span>Generate activity heatmaps</span>
+                                            </div>
+                                        </div>
+                                        <div class="mt-4 p-4 bg-slate-800/50 rounded-lg border border-slate-700">
+                                            <p class="text-xs text-slate-400">
+                                                <strong class="text-slate-300">Privacy Note:</strong> Your location data is used solely for campaign coordination purposes and is securely stored. Location tracking occurs only when you're actively using the app.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Support Section -->
+                <section id="support">
+                    <div class="bg-slate-800/50 backdrop-blur-md rounded-2xl p-8 border border-slate-700 accent-border hover-lift">
+                        <h2 class="heading-font text-4xl text-emerald-400 mb-6 tracking-wide">SUPPORT & CONTACT</h2>
+                        
+                        <p class="text-lg text-slate-300 mb-6">
+                            Need assistance? Our support team is here to help you make the most of the Campaign Manager platform.
+                        </p>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                            <div class="bg-slate-900/50 rounded-xl p-6 border border-emerald-500/30">
+                                <h3 class="text-xl font-semibold text-white mb-3 flex items-center gap-2">
+                                    <svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    Technical Support
+                                </h3>
+                                <p class="text-slate-400 mb-4">For app-related issues, bugs, or technical questions</p>
+                                <a href="mailto:support@mercyrono.campaign" class="text-emerald-400 hover:text-emerald-300 transition-colors">support@mercyrono.campaign</a>
+                            </div>
+
+                            <div class="bg-slate-900/50 rounded-xl p-6 border border-blue-500/30">
+                                <h3 class="text-xl font-semibold text-white mb-3 flex items-center gap-2">
+                                    <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    Campaign Coordination
+                                </h3>
+                                <p class="text-slate-400 mb-4">For campaign strategy and coordination queries</p>
+                                <a href="mailto:campaign@mercyrono.team" class="text-blue-400 hover:text-blue-300 transition-colors">campaign@mercyrono.team</a>
+                            </div>
+                        </div>
+
+                        <div class="bg-gradient-to-br from-emerald-900/30 to-blue-900/30 rounded-xl p-8 border border-emerald-500/30">
+                            <h3 class="text-2xl font-semibold text-white mb-4">Quick Tips for Success</h3>
+                            <ul class="space-y-3 text-slate-300">
+                                <li class="flex items-start gap-3">
+                                    <span class="text-emerald-400 mt-1">→</span>
+                                    <span>Keep your app updated to access the latest features and improvements</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-emerald-400 mt-1">→</span>
+                                    <span>Complete your profile fully to improve team collaboration</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-emerald-400 mt-1">→</span>
+                                    <span>Enable all notifications to stay informed of important updates</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-emerald-400 mt-1">→</span>
+                                    <span>Regularly sync your data when you have internet connectivity</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-emerald-400 mt-1">→</span>
+                                    <span>Contact your coordinator if you encounter any access issues</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900/80 backdrop-blur-md border-t border-slate-700 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="heading-font text-2xl text-emerald-400 mb-3 tracking-wide">CAMPAIGN MANAGER</h3>
+                    <p class="text-slate-400 text-sm">
+                        Empowering Hon. Mercy Rono's campaign for Women Representative in Bomet County
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-3">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li><a href="#overview" class="hover:text-emerald-400 transition-colors">Overview</a></li>
+                        <li><a href="#getting-started" class="hover:text-emerald-400 transition-colors">Getting Started</a></li>
+                        <li><a href="#features" class="hover:text-emerald-400 transition-colors">Features</a></li>
+                        <li><a href="#support" class="hover:text-emerald-400 transition-colors">Support</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-3">Information</h4>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li>Version: 1.0.0</li>
+                        <li>Platform: Mobile Application</li>
+                        <li>Region: Bomet County, Kenya</li>
+                        <li>Last Updated: February 2026</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-700 pt-8 text-center text-slate-400 text-sm">
+                <p>&copy; 2026 Hon. Mercy Rono Campaign. All rights reserved.</p>
+                <p class="mt-2">Built with dedication for the people of Bomet County</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling with active navigation highlighting
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('section[id]');
+            
+            // Highlight active section in navigation
+            function highlightNav() {
+                let scrollY = window.pageYOffset;
+                
+                sections.forEach(section => {
+                    const sectionHeight = section.offsetHeight;
+                    const sectionTop = section.offsetTop - 100;
+                    const sectionId = section.getAttribute('id');
+                    
+                    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('nav-active');
+                            if (link.getAttribute('href') === `#${sectionId}`) {
+                                link.classList.add('nav-active');
+                            }
+                        });
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', highlightNav);
+            
+            // Smooth scroll to section
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    
+                    if (targetSection) {
+                        window.scrollTo({
+                            top: targetSection.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Initial highlight
+            highlightNav();
+            
+            // Add scroll reveal animation
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -100px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            document.querySelectorAll('.hover-lift').forEach(el => {
+                observer.observe(el);
+            });
+        });
+        
+        // Add copy to clipboard functionality for code blocks
+        document.querySelectorAll('.code-block').forEach(block => {
+            block.style.position = 'relative';
+            block.style.cursor = 'pointer';
+            
+            block.addEventListener('click', function() {
+                const text = this.innerText;
+                navigator.clipboard.writeText(text).then(() => {
+                    // Show copied feedback
+                    const feedback = document.createElement('div');
+                    feedback.textContent = 'Copied!';
+                    feedback.style.cssText = 'position: absolute; top: 10px; right: 10px; background: #10b981; color: white; padding: 4px 12px; border-radius: 4px; font-size: 12px; z-index: 10;';
+                    this.appendChild(feedback);
+                    
+                    setTimeout(() => {
+                        feedback.remove();
+                    }, 2000);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
