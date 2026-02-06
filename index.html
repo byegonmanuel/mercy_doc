@@ -115,6 +115,7 @@
             <!-- Desktop Menu -->
             <div class="hidden md:flex items-center gap-8">
                 <a href="#features" class="text-sm font-medium text-white/80 hover:text-udaYellow transition">Features</a>
+                <a href="#roles" class="text-sm font-medium text-white/80 hover:text-udaYellow transition">User Roles</a>
                 <a href="#manifesto" class="text-sm font-medium text-white/80 hover:text-udaYellow transition">Manifesto</a>
                 <a href="#guide" class="text-sm font-medium text-white/80 hover:text-udaYellow transition">Docs</a>
                 <a href="#gallery" class="text-sm font-medium text-white/80 hover:text-udaYellow transition">Gallery</a>
@@ -132,6 +133,7 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden absolute top-full left-0 w-full glass-dark border-b border-white/10 p-4 md:hidden">
             <a href="#features" class="block py-3 text-white font-medium border-b border-white/10">Features</a>
+            <a href="#roles" class="block py-3 text-white font-medium border-b border-white/10">User Roles</a>
             <a href="#manifesto" class="block py-3 text-white font-medium border-b border-white/10">Manifesto</a>
             <a href="#guide" class="block py-3 text-white font-medium border-b border-white/10">Documentation</a>
             <a href="#gallery" class="block py-3 text-white font-medium border-b border-white/10">Gallery</a>
@@ -164,15 +166,15 @@
                 
                 <p class="text-lg text-slate-400 max-w-xl leading-relaxed border-l-4 border-udaYellow pl-6">
                     Advanced campaign orchestration for Hon. Mercy Rono. 
-                    Empowering agents with real-time data, AI insights, and geo-strategic tools to secure the Woman Representative seat.
+                    Empowering agents with real-time data, AI insights, and geo-strategic tools to secure the Women Representative seat.
                 </p>
 
                 <div class="flex flex-col sm:flex-row gap-4 pt-4">
                     <button onclick="toggleModal()" class="px-8 py-4 rounded-xl bg-udaYellow text-udaDarkGreen font-bold hover:bg-white transition-all duration-300 flex items-center justify-center gap-3 glow-yellow">
                         <i class="fa-brands fa-android"></i> Download APK
                     </button>
-                    <a href="#manifesto" class="px-8 py-4 rounded-xl glass-dark text-white font-bold hover:bg-white/10 transition-all duration-300 flex items-center justify-center gap-3 border border-white/10">
-                        <i class="fa-solid fa-file-lines"></i> View Manifesto
+                    <a href="#roles" class="px-8 py-4 rounded-xl glass-dark text-white font-bold hover:bg-white/10 transition-all duration-300 flex items-center justify-center gap-3 border border-white/10">
+                        <i class="fa-solid fa-users-viewfinder"></i> View Roles
                     </a>
                 </div>
 
@@ -202,7 +204,6 @@
                     
                     <!-- Screen Content -->
                     <div class="w-full h-full bg-slate-900 text-white flex flex-col relative">
-                        <!-- App Header -->
                         <div class="pt-10 pb-4 px-6 bg-udaGreen">
                             <div class="flex justify-between items-center">
                                 <span class="font-bold text-sm">Dashboard</span>
@@ -210,7 +211,6 @@
                             </div>
                             <h2 class="text-2xl font-bold mt-2">Hello, Agent</h2>
                         </div>
-                        <!-- App Body -->
                         <div class="p-4 space-y-4">
                             <div class="bg-slate-800 p-4 rounded-xl border border-slate-700">
                                 <div class="flex justify-between items-start mb-2">
@@ -318,7 +318,70 @@
         </div>
     </section>
 
-    <!-- MANIFESTO SECTION (NEW) -->
+    <!-- USER ROLES SECTION (NEW) -->
+    <section id="roles" class="py-24 bg-slate-900 text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="text-udaYellow font-bold tracking-widest text-xs uppercase mb-2 block">Access Levels</span>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Who Uses The <span class="text-gradient">Platform?</span></h2>
+                <p class="text-slate-400">A structured hierarchy ensures data security, efficient delegation, and seamless communication across the entire campaign.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Role 1: ADMIN -->
+                <div class="bg-slate-800/50 backdrop-blur-md border border-slate-700 rounded-3xl p-8 hover:border-udaYellow transition duration-300 group reveal">
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-udaYellow to-yellow-600 text-udaDarkGreen flex items-center justify-center text-2xl mb-6 shadow-lg shadow-yellow-900/20 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">The Admin</h3>
+                    <p class="text-sm text-slate-400 mb-6">The Commanders. Full oversight of the entire campaign machinery.</p>
+                    
+                    <ul class="space-y-3 text-sm text-slate-300">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-udaGreen"></i> Generate Login Credentials</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-udaGreen"></i> View Global Analytics</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-udaGreen"></i> Manage Resource Disbursement</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-udaGreen"></i> Polling Station Overview</li>
+                    </ul>
+                </div>
+
+                <!-- Role 2: COORDINATOR -->
+                <div class="bg-slate-800/50 backdrop-blur-md border border-slate-700 rounded-3xl p-8 hover:border-udaGreen transition duration-300 group reveal delay-100">
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-udaGreen to-green-800 text-white flex items-center justify-center text-2xl mb-6 shadow-lg shadow-green-900/20 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">The Coordinator</h3>
+                    <p class="text-sm text-slate-400 mb-6">Ward Captains. Managing teams and analyzing local data.</p>
+                    
+                    <ul class="space-y-3 text-sm text-slate-300">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-udaYellow"></i> Manage Assigned Agents</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-udaYellow"></i> Review Ward-Level Stats</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-udaYellow"></i> Schedule Local Events</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-udaYellow"></i> Report to HQ</li>
+                    </ul>
+                </div>
+
+                <!-- Role 3: AGENT -->
+                <div class="bg-slate-800/50 backdrop-blur-md border border-slate-700 rounded-3xl p-8 hover:border-white transition duration-300 group reveal delay-200">
+                    <div class="w-16 h-16 rounded-2xl bg-white text-slate-900 flex items-center justify-center text-2xl mb-6 shadow-lg shadow-white/10 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-users-viewfinder"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">The Agent</h3>
+                    <p class="text-sm text-slate-400 mb-6">The Ground Force. Direct interface with the voters.</p>
+                    
+                    <ul class="space-y-3 text-sm text-slate-300">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-udaGreen"></i> GPS Check-ins</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-udaGreen"></i> Update Voter Data</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-udaGreen"></i> Upload Field Photos</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-udaGreen"></i> Receive Notifications</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MANIFESTO SECTION -->
     <section id="manifesto" class="py-24 bg-slate-50 relative overflow-hidden">
         <!-- Abstract Background -->
         <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-udaYellow/5 rounded-full blur-[100px]"></div>
@@ -341,7 +404,7 @@
                             </div>
                             <div>
                                 <h4 class="font-bold text-slate-900">Economic Empowerment</h4>
-                                <p class="text-sm text-slate-500">SACCOs and grants for woman and youth businesses.</p>
+                                <p class="text-sm text-slate-500">SACCOs and grants for women and youth businesses.</p>
                             </div>
                         </li>
                         <li class="flex items-start gap-4 p-4 bg-white rounded-xl shadow-sm border border-slate-100">
@@ -434,7 +497,7 @@
                                 <div class="z-10 w-12 h-12 rounded-full bg-white border-4 border-slate-100 flex items-center justify-center text-udaGreen font-bold shadow-sm">1</div>
                                 <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex-1 hover:border-udaYellow transition duration-300">
                                     <h3 class="text-lg font-bold text-slate-900">Temporary Credentials</h3>
-                                    <p class="text-slate-500 mt-2 text-sm">Admins generate one-time logins for new Coordinators and Agents. These credentials are encrypted and sent via secure internal channels.</p>
+                                    <p class="text-slate-500 mt-2 text-sm"><strong>Admins</strong> generate one-time logins for new Coordinators and Agents. These credentials are encrypted and sent via secure internal channels.</p>
                                 </div>
                             </div>
 
@@ -442,7 +505,7 @@
                                 <div class="z-10 w-12 h-12 rounded-full bg-white border-4 border-slate-100 flex items-center justify-center text-udaGreen font-bold shadow-sm">2</div>
                                 <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex-1 hover:border-udaYellow transition duration-300">
                                     <h3 class="text-lg font-bold text-slate-900">Mandatory Update</h3>
-                                    <p class="text-slate-500 mt-2 text-sm">First login triggers a forced password change and Profile Picture upload. This ensures accountability and team identification.</p>
+                                    <p class="text-slate-500 mt-2 text-sm">First login triggers a forced password change and Profile Picture upload. This ensures accountability and team identification for all users.</p>
                                 </div>
                             </div>
 
@@ -557,9 +620,9 @@
                     <h4 class="text-white font-bold mb-6">Platform</h4>
                     <ul class="space-y-4 text-sm">
                         <li><a href="#features" class="hover:text-udaYellow transition">Features</a></li>
+                        <li><a href="#roles" class="hover:text-udaYellow transition">User Roles</a></li>
                         <li><a href="#guide" class="hover:text-udaYellow transition">Documentation</a></li>
                         <li><a href="#" class="hover:text-udaYellow transition">Security</a></li>
-                        <li><a href="#" class="hover:text-udaYellow transition">Status</a></li>
                     </ul>
                 </div>
 
