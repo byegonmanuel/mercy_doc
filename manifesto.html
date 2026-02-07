@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manifesto 2027 | Hon. Mercy Rono - UDA BETA Aligned</title>
+    
+    <!-- Google Fonts: Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        udaYellow: '#f0c94c',
+                        udaGreen: '#479650',
+                        udaDark: '#0f172a',
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Utilities */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #479650; border-radius: 4px; }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        .glass-dark {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #f0c94c 0%, #ffffff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* Counter Animation */
+        @keyframes countUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .counter { animation: countUp 1s ease-out; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-udaYellow selection:text-udaDarkGreen">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 transition-all duration-300 py-4 top-0 glass-dark text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 bg-gradient-to-br from-udaYellow to-yellow-600 p-0.5 shadow-lg rounded-2xl">
+                    <div class="w-full h-full bg-black flex items-center justify-center rounded-2xl overflow-hidden">
+                        <img src="logo.png" alt="Logo" class="w-8 h-8 object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                        <i class="fa-solid fa-rocket text-white text-sm hidden"></i>
+                    </div>
+                </div>
+                <div class="text-white">
+                    <h1 class="font-bold text-lg leading-none tracking-tight">MERCY RONO</h1>
+                    <span class="text-[10px] font-mono text-udaYellow uppercase tracking-widest">2027 Agenda</span>
+                </div>
+            </a>
+
+            <div class="hidden md:flex items-center gap-8">
+                <a href="index.html" class="text-sm font-medium text-white/80 hover:text-udaYellow transition">Home</a>
+                <a href="#pillars" class="text-sm font-medium text-white/80 hover:text-udaYellow transition">Pillars</a>
+                <a href="#strategy" class="text-sm font-medium text-white/80 hover:text-udaYellow transition">Strategy</a>
+                <a href="#alignment" class="text-sm font-medium text-white/80 hover:text-udaYellow transition">Alignment</a>
+                <a href="#interview" class="text-sm font-medium text-white/80 hover:text-udaYellow transition">Interview Q&A</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION: Speech & Introduction -->
+    <header class="relative pt-32 pb-24 lg:pt-48 lg:pb-32 overflow-hidden">
+        <!-- Unsplash Hero Background -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1541872703-74c5963631df?q=80&w=2070&auto=format&fit=crop" alt="Community Leadership" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-udaDark via-udaDark/90 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-udaDark/95 via-udaDark/60 to-transparent"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-3xl reveal active">
+                <div class="inline-flex items-center gap-2 mb-6">
+                    <span class="w-8 h-[2px] bg-udaYellow"></span>
+                    <span class="text-udaYellow font-mono text-sm uppercase tracking-widest">UDA Bottom-Up Transformation</span>
+                </div>
+                
+                <h1 class="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
+                    My fellow people of Bomet County,
+                </h1>
+                
+                <div class="bg-white/10 backdrop-blur-md border-l-4 border-udaYellow p-8 rounded-r-2xl mb-8">
+                    <p class="text-xl text-slate-100 leading-relaxed font-light">
+                        I am Mercy Rono, a daughter of this soil. I was born here, raised here, and I understand the struggles of our women, youth, farmers, and families.
+                    </p>
+                    <p class="text-xl text-slate-100 leading-relaxed font-light mt-4">
+                        The UDA party believes in Bottom-Up Economic Transformation—and I believe in it too. Development must start with the woman in the village, the youth with skills, the farmer with land, and the hustler with a dream.
+                    </p>
+                    <p class="text-xl text-slate-100 leading-relaxed font-light mt-4">
+                        As your Woman Representative, I will focus on empowering women and youth, supporting smallholder farmers, strengthening skills and MSMEs, and protecting the vulnerable in our society.
+                    </p>
+                </div>
+
+                <p class="text-2xl font-bold text-white mb-2">
+                    "Leadership is not about noise. It is about results."
+                </p>
+                <p class="text-lg text-slate-400">
+                    May God bless you, and may God bless Bomet County.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- WHY THIS WORKS: Impact Stats & Visual -->
+    <section class="py-24 bg-gradient-to-br from-udaDark to-slate-900 text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <span class="text-udaYellow font-bold tracking-widest text-xs uppercase mb-2 block">Why This Agenda Works</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Built on <span class="text-gradient">Evidence & Impact</span></h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">Our approach is backed by data, global best practices, and a deep understanding of Bomet's unique needs.</p>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="grid md:grid-cols-4 gap-6 mb-16">
+                <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 transition reveal counter">
+                    <div class="w-16 h-16 rounded-full bg-udaYellow/20 text-udaYellow flex items-center justify-center text-2xl mx-auto mb-4">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <h3 class="text-4xl font-bold text-white mb-2">68%</h3>
+                    <p class="text-sm text-slate-400">Of Bomet farmers are women</p>
+                </div>
+                
+                <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 transition reveal delay-100 counter">
+                    <div class="w-16 h-16 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center text-2xl mx-auto mb-4">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="text-4xl font-bold text-white mb-2">45%</h3>
+                    <p class="text-sm text-slate-400">Youth unemployment rate</p>
+                </div>
+
+                <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 transition reveal delay-200 counter">
+                    <div class="w-16 h-16 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center text-2xl mx-auto mb-4">
+                        <i class="fa-solid fa-shop"></i>
+                    </div>
+                    <h3 class="text-4xl font-bold text-white mb-2">12K+</h3>
+                    <p class="text-sm text-slate-400">Small businesses in county</p>
+                </div>
+
+                <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 transition reveal delay-300 counter">
+                    <div class="w-16 h-16 rounded-full bg-purple-500/20 text-purple-400 flex items-center justify-center text-2xl mx-auto mb-4">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                    <h3 class="text-4xl font-bold text-white mb-2">3K+</h3>
+                    <p class="text-sm text-slate-400">Diaspora connections</p>
+                </div>
+            </div>
+
+            <!-- Why Bottom-Up Works -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition reveal">
+                    <div class="w-12 h-12 rounded-xl bg-udaYellow/20 text-udaYellow flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-arrow-trend-up"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Bottom-Up Empowerment</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Development starts with ordinary people—women, youth, farmers, hustlers—not elite capture.</p>
+                </div>
+
+                <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition reveal delay-100">
+                    <div class="w-12 h-12 rounded-xl bg-udaGreen/20 text-udaGreen flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-handshake"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Community-Driven</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Projects led by communities, not imposed from Nairobi. Local ownership = local success.</p>
+                </div>
+
+                <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition reveal delay-200">
+                    <div class="w-12 h-12 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Sustainable Growth</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Skills create lifelong income. We build productive citizens, not welfare dependency.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 1: THE 5 PILLARS (Rewritten Agenda) -->
+    <section id="pillars" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="text-udaGreen font-bold tracking-widest text-xs uppercase mb-2 block">The Roadmap</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">The Bottom-Up <span class="text-gradient">Agenda</span></h2>
+                <p class="text-slate-600">
+                    Our commitment: To implement the UDA Bottom-Up Economic Transformation Agenda (BETA) by empowering women, youth, farmers, PWDs, and grassroots communities to participate meaningfully in economic growth.
+                </p>
+            </div>
+
+            <!-- Grid Layout for 5 Pillars -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Pillar 1 -->
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 hover:shadow-xl hover:border-udaGreen/30 transition duration-300 group reveal">
+                    <div class="w-14 h-14 rounded-2xl bg-pink-100 text-pink-600 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-hands-holding-circle"></i>
+                    </div>
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="text-4xl font-black text-slate-200 group-hover:text-udaGreen/20 transition">01</span>
+                        <h3 class="text-xl font-bold text-slate-900">Women, Youth & Social Protection</h3>
+                    </div>
+                    <ul class="space-y-2 text-sm text-slate-600 mb-4">
+                        <li>• Expand Women Enterprise & Youth initiatives</li>
+                        <li>• Support PWDs & vulnerable households</li>
+                        <li>• Promote child welfare & the boy child</li>
+                    </ul>
+                    <div class="pt-4 border-t border-slate-200">
+                        <span class="text-xs font-bold text-udaGreen uppercase tracking-wider">Bottom-Up Principle</span>
+                        <p class="text-xs text-slate-500 mt-1">No Kenyan is too small to matter.</p>
+                    </div>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 hover:shadow-xl hover:border-udaGreen/30 transition duration-300 group reveal delay-100">
+                    <div class="w-14 h-14 rounded-2xl bg-green-100 text-green-600 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-wheat-awn"></i>
+                    </div>
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="text-4xl font-black text-slate-200 group-hover:text-udaGreen/20 transition">02</span>
+                        <h3 class="text-xl font-bold text-slate-900">Agriculture, Cooperatives & Food Security</h3>
+                    </div>
+                    <ul class="space-y-2 text-sm text-slate-600 mb-4">
+                        <li>• Support women & youth farmers</li>
+                        <li>• Value addition & agribusiness skills</li>
+                        <li>• Climate-smart agriculture</li>
+                    </ul>
+                    <div class="pt-4 border-t border-slate-200">
+                        <span class="text-xs font-bold text-udaGreen uppercase tracking-wider">Bottom-Up Principle</span>
+                        <p class="text-xs text-slate-500 mt-1">Empower the smallholder farmer.</p>
+                    </div>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 hover:shadow-xl hover:border-udaGreen/30 transition duration-300 group reveal delay-200">
+                    <div class="w-14 h-14 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-shop"></i>
+                    </div>
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="text-4xl font-black text-slate-200 group-hover:text-udaGreen/20 transition">03</span>
+                        <h3 class="text-xl font-bold text-slate-900">MSMEs, Hustler Economy & Skills</h3>
+                    </div>
+                    <ul class="space-y-2 text-sm text-slate-600 mb-4">
+                        <li>• Skills & enterprise support centers</li>
+                        <li>• Promote TVET, sports & creative talent</li>
+                        <li>• Link MSMEs to financing & markets</li>
+                    </ul>
+                    <div class="pt-4 border-t border-slate-200">
+                        <span class="text-xs font-bold text-udaGreen uppercase tracking-wider">Bottom-Up Principle</span>
+                        <p class="text-xs text-slate-500 mt-1">Skills and capital before handouts.</p>
+                    </div>
+                </div>
+
+                <!-- Pillar 4 -->
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 hover:shadow-xl hover:border-udaGreen/30 transition duration-300 group reveal delay-300">
+                    <div class="w-14 h-14 rounded-2xl bg-udaYellow/20 text-udaYellow flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-earth-africa"></i>
+                    </div>
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="text-4xl font-black text-slate-200 group-hover:text-udaGreen/20 transition">04</span>
+                        <h3 class="text-xl font-bold text-slate-900">Diaspora & Global Linkages</h3>
+                    </div>
+                    <ul class="space-y-2 text-sm text-slate-600 mb-4">
+                        <li>• Leverage diaspora networks for jobs</li>
+                        <li>• Create study/work pathways (Germany)</li>
+                        <li>• Transfer global knowledge locally</li>
+                    </ul>
+                    <div class="pt-4 border-t border-slate-200">
+                        <span class="text-xs font-bold text-udaGreen uppercase tracking-wider">Bottom-Up Principle</span>
+                        <p class="text-xs text-slate-500 mt-1">Global exposure, local prosperity.</p>
+                    </div>
+                </div>
+
+                <!-- Pillar 5 (Full width on mobile, 2 cols on desktop) -->
+                <div class="bg-slate-900 text-white p-8 rounded-3xl border border-slate-800 hover:shadow-2xl hover:border-udaYellow transition duration-300 group md:col-span-2 lg:col-span-2 reveal delay-300">
+                    <div class="flex flex-col md:flex-row gap-8 items-start">
+                        <div class="w-14 h-14 rounded-2xl bg-white/10 text-white flex items-center justify-center text-2xl shrink-0 group-hover:bg-udaYellow group-hover:text-udaDarkGreen transition">
+                            <i class="fa-solid fa-building-columns"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center gap-4 mb-4">
+                                <span class="text-4xl font-black text-white/10 group-hover:text-white/20 transition">05</span>
+                                <h3 class="text-xl font-bold">Sustainable Community Development & Governance</h3>
+                            </div>
+                            <p class="text-slate-300 text-sm mb-6">
+                                Invest in community-driven, accountable projects. Promote transparency, efficiency, and results-oriented leadership. Ensure women are decision-makers, not spectators.
+                            </p>
+                            <div class="pt-4 border-t border-white/10">
+                                <span class="text-xs font-bold text-udaYellow uppercase tracking-wider">Bottom-Up Principle</span>
+                                <p class="text-xs text-slate-400 mt-1">Development that lasts.</p>
+                            </div>
+                        </div>
+                        <div class="w-full md:w-1/3 h-32 md:h-auto rounded-2xl overflow-hidden relative">
+                            <img src="6.png" alt="Community" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&q=80'">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- VISUAL IMPACT: Image Gallery Section -->
+    <section class="py-24 bg-slate-50 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-1/2 bg-white"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-12 reveal">
+                <span class="text-udaGreen font-bold tracking-widest text-xs uppercase mb-2 block">Serving The People</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Action on <span class="text-gradient">The Ground</span></h2>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 reveal">
+                    <img src="1.png" class="w-full h-64 object-cover" onerror="this.src='https://images.unsplash.com/photo-1573164713988-8665fc963095?w=600&q=80'" alt="Community Engagement">
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 reveal delay-100">
+                    <img src="2.png" class="w-full h-64 object-cover" onerror="this.src='https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=600&q=80'" alt="Youth Empowerment">
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 reveal delay-200">
+                    <img src="4.png" class="w-full h-64 object-cover" onerror="this.src='https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&q=80'" alt="Skills Training">
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 reveal delay-300">
+                    <img src="5.png" class="w-full h-64 object-cover" onerror="this.src='https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=600&q=80'" alt="Women Leadership">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: STRATEGY ANALYSIS (What it's really saying) -->
+    <section id="strategy" class="py-24 bg-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-slate-200/50 skew-x-12 z-0"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                
+                <div class="lg:w-1/2 reveal">
+                    <div class="inline-flex items-center gap-2 mb-4">
+                        <i class="fa-solid fa-lightbulb text-udaYellow"></i>
+                        <span class="text-udaYellow font-bold uppercase tracking-widest text-xs">Campaign Insight</span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">What This Agenda is Really Saying</h2>
+                    <p class="text-slate-600 mb-6">
+                        Combines local identity + diaspora credibility. Targets women, youth, families, and marginalized groups. Frames leadership as service, not power.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center text-udaGreen shrink-0">
+                                <i class="fa-solid fa-heart"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Leadership Identity</h4>
+                                <p class="text-sm text-slate-500">"Leadership with Heart. Vision with Action." Service-driven, not elite or distant.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center text-udaGreen shrink-0">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Local Roots + Global Exposure</h4>
+                                <p class="text-sm text-slate-500">Born in Kembu Ward, based in Nyangores. International experience in Germany. Message: "I understand home problems, and I bring global solutions."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:w-1/2 reveal delay-100">
+                    <div class="bg-slate-50 p-8 rounded-3xl shadow-xl border border-slate-100">
+                        <h3 class="text-xl font-bold text-slate-900 mb-4 border-b pb-4">The Hidden Strategy</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-udaYellow"></i>
+                                <span class="text-slate-700">Combines local identity + diaspora credibility</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-udaYellow"></i>
+                                <span class="text-slate-700">Targets women, youth, families, and marginalized groups</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-udaYellow"></i>
+                                <span class="text-slate-700">Frames leadership as service, not power</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-check text-udaYellow"></i>
+                                <span class="text-slate-700">Positions herself as modern, educated, and globally connected, but still rooted in Bomet</span>
+                            </li>
+                        </ul>
+                        
+                        <div class="mt-8 bg-udaDark text-white p-6 rounded-2xl">
+                            <h4 class="font-mono text-udaYellow text-xs uppercase mb-2">One-line Decode</h4>
+                            <p class="italic">"I am a daughter of Bomet with international experience, ready to empower women, youth, and communities through inclusive, sustainable development as your Woman Representative in 2027."</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: BETA ALIGNMENT ANALYSIS -->
+    <section id="alignment" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <span class="text-udaGreen font-bold tracking-widest text-xs uppercase mb-2 block">Strategic Alignment</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">How Mercy Rono's Agenda Lines Up with <br><span class="text-gradient">UDA BETA</span></h2>
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-udaGreen/10 rounded-full text-udaGreen font-bold text-sm">
+                    <i class="fa-solid fa-chart-line"></i> Alignment Score: Very High (≈ 85%)
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Alignment 1 -->
+                <div class="p-6 rounded-2xl border border-slate-200 bg-white hover:shadow-lg transition reveal">
+                    <h4 class="font-bold text-slate-900 mb-2">BETA: Agriculture & Food Security</h4>
+                    <p class="text-xs text-slate-500 mb-3">Empowering smallholder farmers, value addition.</p>
+                    <div class="bg-slate-50 p-4 rounded-xl text-sm text-slate-600 border border-slate-100">
+                        <strong>Alignment:</strong> While agriculture is not explicitly named, women empowerment + skills + sustainable community development directly support bottom-up agricultural productivity—especially in Bomet, where farming is central.
+                    </div>
+                </div>
+
+                <!-- Alignment 2 -->
+                <div class="p-6 rounded-2xl border border-slate-200 bg-white hover:shadow-lg transition reveal delay-100">
+                    <h4 class="font-bold text-slate-900 mb-2">BETA: MSMEs & Hustler Economy</h4>
+                    <p class="text-xs text-slate-500 mb-3">Skills, entrepreneurship, access to opportunity.</p>
+                    <div class="bg-slate-50 p-4 rounded-xl text-sm text-slate-600 border border-slate-100">
+                        <strong>Alignment:</strong> This is textbook Bottom-Up. Skills before handouts. Opportunity before dependency. Local talent → global markets. Mirrors UDA's "Empower the hustler, not the cartels."
+                    </div>
+                </div>
+
+                <!-- Alignment 3 -->
+                <div class="p-6 rounded-2xl border border-slate-200 bg-white hover:shadow-lg transition reveal delay-200">
+                    <h4 class="font-bold text-slate-900 mb-2">BETA: Women, Youth & Social Protection</h4>
+                    <p class="text-xs text-slate-500 mb-3">Targeted empowerment of women, youth, PWDs.</p>
+                    <div class="bg-slate-50 p-4 rounded-xl text-sm text-slate-600 border border-slate-100">
+                        <strong>Alignment:</strong> Directly matches BETA's inclusive growth model. Woman Rep is constitutionally mandated to support gender equality, so this alignment is especially strong.
+                    </div>
+                </div>
+
+                <!-- Alignment 4 -->
+                <div class="p-6 rounded-2xl border border-slate-200 bg-white hover:shadow-lg transition reveal delay-300">
+                    <h4 class="font-bold text-slate-900 mb-2">BETA: Human Capital & Skills</h4>
+                    <p class="text-xs text-slate-500 mb-3">Education, skills, TVETs, talent development.</p>
+                    <div class="bg-slate-50 p-4 rounded-xl text-sm text-slate-600 border border-slate-100">
+                        <strong>Alignment:</strong> Supports BETA's push for productive citizens, not welfare dependency—especially relevant to youth unemployment in Rift Valley counties.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-8 p-6 bg-udaYellow/10 border border-udaYellow/20 rounded-2xl text-center reveal">
+                <p class="text-slate-800 font-medium">
+                    <strong>Political Translation:</strong> Mercy Rono's Woman Rep agenda <em>operationalizes</em> the UDA Bottom-Up Economic Transformation Agenda at the grassroots level through women empowerment, skills development, inclusive growth, and sustainable community-led initiatives.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: INTERVIEW Q&A -->
+    <section id="interview" class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <span class="text-udaYellow font-bold tracking-widest text-xs uppercase mb-2 block">In The Media</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Defending the Agenda</h2>
+                <p class="text-slate-500 mt-4">Key responses for Radio & TV Interviews.</p>
+            </div>
+
+            <div class="space-y-8">
+                <!-- Q1 -->
+                <div class="bg-slate-50 p-8 rounded-3xl shadow-sm border border-slate-200 hover:shadow-md transition reveal">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-full bg-udaGreen/10 flex items-center justify-center shrink-0 text-udaGreen font-bold text-sm">
+                            <i class="fa-solid fa-microphone"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-lg mb-2">How does your agenda align with UDA's Bottom-Up approach?</h4>
+                            <p class="text-slate-600 leading-relaxed">
+                                Bottom-Up is about empowering ordinary people. My agenda focuses on women, youth, farmers, MSMEs, and skills development. That is exactly where economic transformation begins—at the grassroots.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q2 -->
+                <div class="bg-slate-50 p-8 rounded-3xl shadow-sm border border-slate-200 hover:shadow-md transition reveal delay-100">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-full bg-udaGreen/10 flex items-center justify-center shrink-0 text-udaGreen font-bold text-sm">
+                            <i class="fa-solid fa-microphone"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-lg mb-2">Why focus so much on skills instead of handouts?</h4>
+                            <p class="text-slate-600 leading-relaxed">
+                                Handouts end. Skills create lifelong income. BETA is clear: empower people to earn, not depend. Skills and enterprise support make our people productive.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q3 -->
+                <div class="bg-slate-50 p-8 rounded-3xl shadow-sm border border-slate-200 hover:shadow-md transition reveal delay-200">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-full bg-udaGreen/10 flex items-center justify-center shrink-0 text-udaGreen font-bold text-sm">
+                            <i class="fa-solid fa-microphone"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-lg mb-2">Where does agriculture fit in your agenda?</h4>
+                            <p class="text-slate-600 leading-relaxed">
+                                In Bomet, women are farmers. By supporting women empowerment, cooperatives, value addition, and climate-smart agriculture, we strengthen food security and household incomes.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q4 -->
+                <div class="bg-slate-50 p-8 rounded-3xl shadow-sm border border-slate-200 hover:shadow-md transition reveal delay-300">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-full bg-udaGreen/10 flex items-center justify-center shrink-0 text-udaGreen font-bold text-sm">
+                            <i class="fa-solid fa-microphone"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-lg mb-2">How does your international experience help Bomet?</h4>
+                            <p class="text-slate-600 leading-relaxed">
+                                It allows me to connect Bomet youth and professionals to global opportunities, investments, and skills—bringing solutions home, not politics.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q5 -->
+                <div class="bg-slate-50 p-8 rounded-3xl shadow-sm border-2 border-udaGreen/30 shadow-udaGreen/10 transition reveal">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-full bg-udaGreen text-white flex items-center justify-center shrink-0 font-bold text-sm">
+                            <i class="fa-solid fa-microphone"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-lg mb-2">Why should UDA support your candidature?</h4>
+                            <p class="text-slate-600 leading-relaxed">
+                                Because my agenda does not compete with BETA—it implements it. I translate national policy into real benefits for ordinary people.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Closing Statement -->
+    <section class="py-24 bg-udaDark text-white relative overflow-hidden text-center">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="w-32 h-32 bg-gradient-to-br from-udaYellow to-yellow-600 rounded-3xl mx-auto mb-8 flex items-center justify-center shadow-2xl shadow-udaYellow/20">
+                <i class="fa-solid fa-trophy text-4xl text-udaDarkGreen"></i>
+            </div>
+            
+            <h2 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">
+                The <span class="text-udaYellow">GERMAN</span> MACHINE
+            </h2>
+            <h3 class="text-2xl md:text-3xl font-light text-slate-300 mb-10">
+                Hon. Manager Mercy Rono (Chesigei)
+            </h3>
+            
+            <div class="inline-flex items-center gap-4 px-8 py-4 rounded-full bg-white/10 backdrop-blur-md border border-white/10 mb-8">
+                <span class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></span>
+                <span class="font-mono text-sm tracking-wider uppercase">UDA Registered Aspirant</span>
+            </div>
+
+            <div class="mt-12">
+                <p class="text-2xl font-serif italic text-slate-400">"May God bless you, and may God bless Bomet County."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-300 pt-16 pb-8 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center gap-3 mb-4 md:mb-0">
+                    <div class="w-10 h-10 bg-gradient-to-br from-udaYellow to-yellow-600 p-0.5 rounded-2xl">
+                        <div class="w-full h-full bg-black flex items-center justify-center rounded-2xl overflow-hidden">
+                            <img src="logo.png" alt="Logo" class="w-8 h-8 object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                            <i class="fa-solid fa-rocket text-white text-sm hidden"></i>
+                        </div>
+                    </div>
+                    <span class="font-bold text-white">Mercy Rono Campaign</span>
+                </div>
+                <div class="text-sm text-slate-500">
+                    &copy; 2026 Hon. Mercy Rono Campaign. All Rights Reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script for Animations -->
+    <script>
+        const observerOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => { observer.observe(el); });
+    </script>
+</body>
+</html>
